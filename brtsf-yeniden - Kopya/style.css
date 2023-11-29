@@ -98,10 +98,20 @@
 .wrapper .banner {
     height: calc(100vh - 80px);
     background-image: url(background.png);
-    background: linear-gradient(rgba(0, 0, 0, 0.5));
+    background: black;
     background-position: center;
+    overflow: hidden;
+    background: #C33764;
+    /* fallback colour. Make sure this is just one solid colour. */
+    background: -webkit-linear-gradient(rgba(29, 37, 113, 0), rgba(0, 0, 0, 0.8)), url("background.png");
+    background: linear-gradient(rgba(29, 37, 113, 0), rgba(0, 0, 0, 0.8)), url("background.png");
+    /* The least supported option. */
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.wrapper img {
+    object-fit: cover;
 }
 
 .wrapper .title {
@@ -115,7 +125,7 @@
 .wrapper .title h2 {
     margin-top: 20%;
     font-size: 50px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 
 
 }
@@ -124,6 +134,7 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 3%;
+    color: white;
 }
 
 .wrapper button {
@@ -378,7 +389,7 @@
 }
 
 .footer-content li a {
-
+    margin: 3px;
     color: #d6d6d6;
 
 }
@@ -449,6 +460,11 @@
 
 
 
+@media(max-width: 400px) {
+    .bottom-left {
+        display: none;
+    }
+}
 
 @media (max-width: 1690px) {
     .footer {
@@ -456,7 +472,7 @@
     }
 }
 
-;
+
 @media (max-width: 1120px) {
     .footer {
         display: grid;
@@ -465,15 +481,8 @@
     }
 }
 
-;
-@media (max-width: 700px) {
-    .footer {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-        gap: 2.5rem;
-    }
 
-}
+
 
 @media screen and (max-width:866px) {
     .haberler-olaylar p {
@@ -500,6 +509,16 @@
 @media screen and (max-width:767px) {
     .stats .container .box {
         flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width:710px) {
+    .stats .container .box {
+        flex-basis: 100%;
+    }
+
+    .wrapper button {
+        margin: 1%;
     }
 }
 
@@ -535,5 +554,33 @@
 
     .footer img {
         width: 55%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        gap: 2.5rem;
+    }
+
+    .wrapper .title p {
+        font-size: 15px;
+    }
+
+    .wrapper .title h2 {
+        font-size: 35px;
+    }
+
+    .haberler .column {
+        float: none;
+        margin-left: 33.5%;
+    }
+}
+
+@media screen and(max-width: 400px) {
+    .haberler .column .bottom-left {
+        display: none;
     }
 }
